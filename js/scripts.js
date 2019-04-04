@@ -1,20 +1,4 @@
 // Business logic
-function isGreaterThanFourThousand(number) {
-  if (number >= 4000) {
-    return false;
-  } else {
-    return true;
-  }
-}
-
-function isNumber(input) {
-  if (isNaN(input)) {
-    return false;
-  } else {
-    return true;
-  }
-}
-
 function numberConverter(number) {
   var romanStr = "";
   for (var i = number; i > 0; i-=1000) {
@@ -98,12 +82,31 @@ function numberConverter(number) {
   return romanStr;
 }
 
-  // console.log(romanNumber4Opt("DCCCCXXXXVIIII"));
+function isGreaterThanFourThousand(number) {
+  if (number >= 4000) {
+    alert("Please Enter a Number Less Than 4000");
+  } else {
+    return true;
+  }
+}
+
+function isNumber(input) {
+  if (isNaN(input)) {
+    alert("Please enter a number I can read.")
+  } else {
+    return true;
+  }
+}
+
 // User Interface logic
 $(document).ready(function(){
   $("#formOne").submit(function(event){
     event.preventDefault();
-  var number = parseInt($("#numberInput").val());
-  console.log(number);
+    var number = parseInt($("#numberInput").val());
+    isNumber(number);
+    isGreaterThanFourThousand(number);
+    var output = numberConverter(number);
+    $("h2").after("<h3>" + output + "</h3>");
+    // $("h2").after("<h3>" + output + "</h3>");
   });
 });
