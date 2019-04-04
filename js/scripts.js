@@ -106,7 +106,7 @@ $(document).ready(function(){
     isNumber(number);
     isGreaterThanFourThousand(number);
     var output = numberConverter(number);
-    $("h2").after("<h3>" + output + "</h3>");
-    // $("h2").after("<h3>" + output + "</h3>");
+    $('h3').text(output);
+    $("div.result").show();
   });
 });
